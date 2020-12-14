@@ -1,7 +1,7 @@
-const Discord = require(`discord.js`); // discord.js를 불러옴
-const client = new Discord.Client(); // 새로운 디스코드 클라이언트를 만듬
-// 만약에 클라이언트가 준비되었다면, 아래의코드를 실행합니다
-// 이 이벤트는 봇이 로그인 되고 한번만 실행될것입니다
+const Discord = require(`discord.js`); 
+const client = new Discord.Client(); 
+const token = process.env.token;
+
 client.once('ready', () => {
   console.log("디스코드 봇이 준비되었습니다");
 });
@@ -47,5 +47,5 @@ client.on('message', message => {
 });
 
 // 여러분의 디스코드 토큰으로 디스코드에 로그인합니다
-client.login(process.env.token);
+client.login(token);
 
